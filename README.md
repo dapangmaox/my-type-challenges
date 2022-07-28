@@ -76,3 +76,29 @@ const cats: Record<CatName, CatInfo> = {
   mordred: { age: 16, breed: 'British Shorthair' }
 };
 ```
+
+## Q 遇到的问题
+
+### &
+
+假如有如下代码：
+
+```ts
+type Todo = {
+  title: string;
+  description?: string;
+  completed: boolean;
+} & {
+  readonly title: string;
+};
+
+const todo: Todo = {
+  title: 'task',
+  description: 'xxx',
+  completed: false
+};
+
+todo.title = 'abc'; // 可以修改
+```
+
+`&` 两个同名的属性时，正确的行为是什么？
