@@ -40,6 +40,10 @@ type DeepReadonly<T> = {
 
 网上关于这个实现是有争论的，原因在于基本类型比如 string，在使用 `keyof` 操作符的时候也会有一系列属性和方法返回。
 
+> 在网上偶然看到了一个答案：
+> `DeepReadonly<string>` 是字符串，因为只读只能应用于数组文字和对象的属性。与 `Readonly<string>` 为 `string` 或 `readonly string` 是无效语法的原因相同。
+> https://cloud.tencent.com/developer/ask/sof/702690
+
 ```ts
 type TS = keyof string extends never ? true : false; // false
 ```
