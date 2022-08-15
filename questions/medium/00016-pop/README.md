@@ -18,6 +18,8 @@ type re2 = Pop<arr2>; // expected to be [3, 2]
 
 使用 `infer` 把数组分成两部分。
 
+TypeScript 4.0 引入了 [variadic-tuple-types](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types)，可以让剩余元素出现在元组中的任何位置，而不只是在结尾。
+
 ```ts
 type Pop<T extends any[]> = T extends [...infer R, infer _] ? R : never;
 ```

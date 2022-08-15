@@ -6,6 +6,10 @@
 
 在刷 type-challenges 之前，需要了解一些常用的语法和常见的套路。
 
+## extends
+
+`extends` 有两种用法，接口继承和条件判断。
+
 ### infer
 
 `infer` 表示在 `extends` 条件语句中待推断的类型变量。
