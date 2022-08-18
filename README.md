@@ -6,7 +6,7 @@
 
 在刷 type-challenges 之前，需要了解一些常用的语法和常见的套路。
 
-## extends
+### extends
 
 `extends` 有两种用法，接口继承和条件判断。
 
@@ -81,7 +81,17 @@ const cats: Record<CatName, CatInfo> = {
 };
 ```
 
-## Q 遇到的问题
+### keyof any
+
+```ts
+type TS = keyof any;
+// type TS = string | number | symbol
+
+type TS = PropertyKey;
+// built in: type PropertyKey = string | number | symbol
+```
+
+## 遇到的问题
 
 ### &
 
